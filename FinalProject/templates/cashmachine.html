@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p style="height: 150px"></p>
+<h1>CASH MACHINE</h1>
+<form  method="POST" action=".">
+    {% csrf_token %}
+
+    <p>
+        <input type="text" name="valueof" style="width: 400px;" id="valueof" value="{{ notes }}"/>
+{#        <input type="text" name="valueof" style="width: 400px;" id="valueof" value="{{ notes }}" {{ disabled }}/>        #}
+    </p>
+    <p>
+        <button type="button" id="1" class="number" {{ disabled }}>1</button>
+        <button type="button" id="2" class="number" {{ disabled }}>2</button>
+        <button type="button" id="3" class="number" {{ disabled }}>3</button>
+    </p>
+    <p>
+        <button type="button" id="4" class="number" {{ disabled }}>4</button>
+        <button type="button" id="5" class="number" {{ disabled }}>5</button>
+        <button type="button" id="6" class="number" {{ disabled }}>6</button>
+    </p>
+    <p>
+        <button type="button" id="7" class="number" {{ disabled }}>7</button>
+        <button type="button" id="8" class="number" {{ disabled }}>8</button>
+        <button type="button" id="9" class="number" {{ disabled }}>9</button>
+    </p>
+    <p>
+        <button type="button" id="0" class="number" {{ disabled }}>0</button>
+    </p>
+    <p>
+        <button type="button" id="clear">CLEAR</button>
+        <button type="submit" id="withdraw">WITHDRAW</button>
+    </p>
+    <div id="myOutput"></div>
+</form>
+
+{% endblock content %}
+
