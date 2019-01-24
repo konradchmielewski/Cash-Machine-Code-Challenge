@@ -1,7 +1,5 @@
-from django.shortcuts import render, render_to_response
-from django.template import RequestContext
+from django.shortcuts import render
 from django.views import View
-from django.http import HttpResponse
 
 
 class MainView(View):
@@ -39,8 +37,6 @@ class MainView(View):
             else:
                 return render(request, "cashmachine.html",
                               {'notes': "InvalidArgumentException", 'disabled': 'disabled'})
-        except IndexError:
-            return render(request, "cashmachine.html", {'notes': "[Empty Set]", 'disabled': 'disabled'})
         except ValueError:
             return render(request, "cashmachine.html",
                           {'notes': "InvalidArgumentException", 'disabled': 'disabled'})
