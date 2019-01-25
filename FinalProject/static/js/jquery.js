@@ -1,17 +1,17 @@
 $(document).ready(function() {
 
-    var valueof = $("#valueof");
+    var input_value = $("#input_value");
     var button_clear = $("#clear");
     var button = $(".number");
 
     button.on("click", function() {
-        var currentvalue = $("#valueof").val();
+        var current_value = $("#input_value").val();
         var value = ($(this).attr('id'));
-        valueof.attr('value', (currentvalue + value));
+        input_value.attr('value', (current_value + value));
     });
 
     button_clear.on("click", function() {
-        valueof.attr('value', null);
+        input_value.attr('value', null);
         $(".number").removeAttr("disabled");
     });
 
